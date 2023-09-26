@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'hesap/style.css' %}">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kullanıcı Profili</title>
+</head>
+<body>
+<div class="arkaplan alt-kenar-10">
+    <div class="ust kapsayici">
+        <div class="logo">
+            <h1><span>Öğret</span>medya</h1>
+            <h2>www.ogretmedya.com</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'anasayfa'%}">Ana Sayfa</a></li>
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'giris' %}">Giriş</a></li>
+                    <li><a href="{% url 'register' %}">Kayıt</a></li>
+                {% endif %}
+                <li><a href="{% url 'egitimler'%}">Eğitimler</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'egitim_ekle' %}">Eğitim Ekle</a></li>
+                    <li><a href="{% url 'hesap' %}">Hesap</a></li>
+                    <li><a href="{% url 'cikis' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="profile-container">
+    <h1>Kullanıcı Profili</h1>
+    <!-- Profil resmini göstermek için ekledik -->
+    <div class="user-info">
+        <div class="profil-resim">
+            <label for="profile-picture">Profil Resmi:</label>
+            <img src="{{ request.user.userprofile.profile_picture.url }}" alt="Profil Resmi">
+        </div>
+    </div>
+    <div class="user-info">
+        <label for="username">Kullanıcı Adı:</label>
+        <input type="text" id="username" name="username" value="{{ request.user.username }}" readonly>
+    </div>
+    <div class="user-info">
+        <label for="email">E-Posta Adresi:</label>
+        <input type="email" id="email" name="email" value="{{ request.user.email }}" readonly>
+    </div>
+    <div class="user-info">
+        <label for="name">Adı Soyadı:</label>
+        <input type="text" id="name" name="name" value="{{ request.user.get_full_name }}" readonly>
+    </div>
+
+    <div class="user-info">
+        <div class="egitimler-listesi">
+            {% for egitim in egitimler %}
+            <div class="egitim-kutusu">
+                <div class="egitim-resim">
+                    {% if egitim.profile_picture %}
+                        <img src="{{ egitim.profile_picture.url }}" alt="Eğitim Resmi">
+                    {% endif %}
+                </div>
+                <div class="egitim-bilgileri">
+                    <h2>{{ egitim.baslik }}</h2>
+                    <p>Eğitmen: {{ egitim.egitim_sahibi.username }}</p>
+                    <p>Süre: {{ egitim.sure }}Dakika</p>
+                    <p>Fiyat: {{ egitim.fiyat }} TL</p>
+                    <p>Eğitim İçeriği: {{ egitim.egitim_icerigi }}</p>
+                    {% if request.user == egitim.egitim_sahibi %}
+                        <a href="{% url 'egitim_duzenle' slug=egitim.slug %}" class="editle-button">Eğitimi Düzenle</a>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

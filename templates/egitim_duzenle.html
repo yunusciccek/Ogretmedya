@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'egitim_duzenle/style.css' %}">
+<div class="arkaplan alt-kenar-10">
+    <div class="ust kapsayici">
+        <div class="logo">
+            <h1><span>Öğret</span>medya</h1>
+            <h2>www.ogretmedya.com</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'anasayfa'%}">Ana Sayfa</a></li>
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'giris' %}">Giriş</a></li>
+                    <li><a href="{% url 'register' %}">Kayıt</a></li>
+                {% endif %}
+                <li><a href="{% url 'egitimler'%}">Eğitimler</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'egitim_ekle' %}">Eğitim Ekle</a></li>
+                <li><a href="{% url 'hesap' %}">Hesap</a></li>
+                <li><a href="{% url 'cikis' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="egitim-duzenle-container">
+    <h2>Eğitimi Düzenle</h2>
+    <form method="post" enctype="multipart/form-data" class="egitim-duzenle-form">
+        {% csrf_token %}
+        
+        <div class="input-box">
+            {{ form.baslik.label_tag }}
+            {{ form.baslik }}
+            {% if form.baslik.errors %}
+                <div class="error">{{ form.baslik.errors }}</div>
+            {% endif %}
+        </div>
+        
+        <div class="input-box">
+            {{ form.egitim_icerigi.label_tag }}
+            {{ form.egitim_icerigi }}
+            {% if form.egitim_icerigi.errors %}
+                <div class="error">{{ form.egitim_icerigi.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="input-box">
+            {{ form.egitmen.label_tag }}
+            {{ form.egitmen }}
+            {% if form.egitmen.errors %}
+                <div class="error">{{ form.egitmen.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="input-box">
+            {{ form.sure.label_tag }}
+            {{ form.sure }}
+            {% if form.sure.errors %}
+                <div class="error">{{ form.sure.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="input-box">
+            {{ form.fiyat.label_tag }}
+            {{ form.fiyat }}
+            {% if form.fiyat.errors %}
+                <div class="error">{{ form.fiyat.errors }}</div>
+            {% endif %}
+        </div>
+        
+        <div class="input-box">
+            <label for="profile_picture" class="file-label"><i class="fa fa-camera"></i> Eğitim Fotoğrafı Ekle</label>
+            <input type="file" name="profile_picture" id="profile_picture" accept="image/*" class="file-input">
+        </div>
+        
+        <button type="submit" class="submit-button"><i class="fa fa-save"></i> Kaydet</button>
+    </form>
+    <a href="{% url 'egitim_detay' egitim.slug %}" class="geri-don-link"><i class="fa fa-arrow-left"></i> Eğitime Geri Dön</a>
+    <div class="sil-container">
+        <a href="{% url 'egitim_sil' egitim.id %}" class="sil-link">Eğitimi Sil</a>
+    </div>
+</div>
+{% endblock %}

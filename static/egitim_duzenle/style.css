@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/*******************/
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.arkaplan {
+    background-color: #25373D;
+}
+
+.kapsayici {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.ust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+}
+
+.ust .logo {
+    text-align: center;
+    color: #fff;
+
+}
+
+.ust .logo h1 {
+    font-size: 4rem;
+    letter-spacing: .5rem;
+    color:rgb(75, 73, 187)
+}
+
+.ust .logo h1 span {
+    color: #4CAF50;
+}
+
+.ust .logo h1:hover span {
+    background-color: #4CAF50;
+    color: #25373D;
+}
+
+.ust .logo h2 {
+    font-size: 2.4rem;
+}
+
+.ust .menu ul {
+    display: flex;
+}
+
+.ust .menu ul li {
+    margin: 0 1rem;
+}
+
+.ust .menu ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 0 2rem;
+}
+
+.ust .menu ul a:hover {
+    color: #FCB941;
+}
+/* Arayüz stilleri (Aynı Kalır) */
+
+/* Form stilleri */
+.egitim-duzenle-container {
+    width: 60%; /* Formun genişliğini ayarlayabilirsiniz */
+    margin: 2% auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.egitim-duzenle-form {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Form öğelerini ortalamak için */
+}
+
+.input-box {
+    width: 80%;
+    position: relative;
+}
+
+.input-box label {
+    display: block;
+    text-align: left; /* Etiketleri sola hizalamak için */
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="password"],
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 1.6rem;
+    color: #333;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 10px;
+}
+
+.input-box input[type="text"]:focus,
+.input-box input[type="email"]:focus,
+.input-box input[type="password"]:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+.input-box button {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Düğmeyi biraz yukarı taşımak için */
+}
+
+.input-box button:hover {
+    background-color: #00BCD4;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: #00BCD4;
+}
+
+.file-input {
+    display: none;
+}
+
+.geri-don-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s;
+    margin-top: 10px; /* Geri dönüş bağlantısını yukarı taşımak için */
+}
+
+.geri-don-link:hover {
+    color: #00BCD4;
+}
+/* Eğitim Sil Linki Stili */
+.sil-link {
+    color: #E74C3C; /* Silme işlemi için kırmızı renk kullanabilirsiniz */
+    text-decoration: none;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    transition: color 0.3s;
+    display: block; /* Yatay merkezlemek için gereklidir */
+    margin: 0 auto; /* Yatay merkezlemek için gereklidir */
+    width: fit-content; /* İçeriği genişliğe uygun yapar */
+}
+
+.sil-link:hover {
+    color: #C0392B; /* Silme işlemi için kırmızı renk kullanabilirsiniz */
+}

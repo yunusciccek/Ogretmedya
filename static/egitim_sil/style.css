@@ -1,0 +1,60 @@
+/* Stil Dosyası - style.css */
+/* Sayfa Genel Stili */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+/* Eğitim Sil Container Stili */
+.egitim-sil-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Başlık Stili */
+.egitim-sil-container h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+/* Açıklama Metni Stili */
+.egitim-sil-container p {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+/* Silme Düğmesi Stili */
+.egitim-sil-container button {
+    background-color: #E74C3C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.egitim-sil-container button:hover {
+    background-color: #C0392B;
+}
+
+/* Geri Dön Linki Stili */
+.geri-don-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1.6rem;
+    display: block;
+    margin-top: 20px;
+}
+
+.geri-don-link i {
+    margin-right: 5px;
+}

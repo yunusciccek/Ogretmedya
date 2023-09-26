@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/*******************/
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.arkaplan {
+    background-color: #25373D;
+}
+
+.kapsayici {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.ust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+}
+
+.ust .logo {
+    text-align: center;
+    color: #fff;
+
+}
+
+.ust .logo h1 {
+    font-size: 4rem;
+    letter-spacing: .5rem;
+    color:rgb(75, 73, 187)
+}
+
+.ust .logo h1 span {
+    color: #4CAF50;
+}
+
+.ust .logo h1:hover span {
+    background-color: #4CAF50;
+    color: #25373D;
+}
+
+.ust .logo h2 {
+    font-size: 2.4rem;
+}
+
+.ust .menu ul {
+    display: flex;
+}
+
+.ust .menu ul li {
+    margin: 0 1rem;
+}
+
+.ust .menu ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 0 2rem;
+}
+
+.ust .menu ul a:hover {
+    color: #FCB941;
+}
+
+.Yazi {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.Yazi h1 {
+    font-size: 48px; /* İstediğiniz font boyutu */
+    color: #4CAF50; /* İstediğiniz metin rengi */
+}
+
+/* Form Alanları */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 500px; /* Genişlik 500px olarak ayarlandı */
+    margin: 0 auto;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #00BCD4;
+}
+
+.form-container .input-box {
+    position: relative;
+    margin: 0;
+}
+
+.form-container .input-box input[type="file"] {
+    display: none;
+}
+
+.form-container .input-box label {
+    position: relative;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-container .input-box label:hover {
+    background-color: #00BCD4;
+}
+
+.form-container #profile_picture_preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+}
+/* Fiyat alanının fontunu büyütme */
+.form-container .input-box input[name="fiyat"] {
+    font-size: 24px; /* Örnek olarak font boyutunu 24px olarak ayarlayabilirsiniz */
+    padding: 10px;
+}
+.form-container .input-box input[name="sure"] {
+    font-size: 24px; /* Örnek olarak font boyutunu 24px olarak ayarlayabilirsiniz */
+    padding: 10px;
+}
+
+/* Fiyat alanının içindeki metni büyütme */
+.form-container .input-box label[for="fiyat"] {
+    font-size: 24px; /* Örnek olarak font boyutunu 24px olarak ayarlayabilirsiniz */
+    padding: 10px 20px;
+}

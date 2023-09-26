@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'egitim_detay/style.css' %}">
+
+<div class="arkaplan alt-kenar-10">
+    <div class="ust kapsayici">
+        <div class="logo">
+            <h1><span>Öğret</span>medya</h1>
+            <h2>www.ogretmedya.com</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'anasayfa'%}">Ana Sayfa</a></li>
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'giris' %}">Giriş</a></li>
+                    <li><a href="{% url 'register' %}">Kayıt</a></li>
+                {% endif %}
+                <li><a href="{% url 'egitimler'%}">Eğitimler</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'egitim_ekle' %}">Eğitim Ekle</a></li>
+                <li><a href="{% url 'hesap' %}">Hesap</a></li>
+                <li><a href="{% url 'cikis' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="egitim-detay">
+    <div class="egitim-icerik">
+        <h2>Eğitim Detayları</h2>
+        <p>Eğitim Başlığı: {{ egitim.baslik }}</p>
+        <p>Eğitmen: {{ egitim.egitmen }}</p>
+        <p>Süre: {{ egitim.sure }}</p>
+        <p>Fiyat: {{ egitim.fiyat }} TL</p>
+        <p>Eğitim İçeriği: {{ egitim.egitim_icerigi }}</p>
+    </div>
+    <div class="egitim-resim">
+        {% if egitim.profile_picture %}
+        <img src="{{ egitim.profile_picture.url }}" alt="Eğitim Resmi">
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
