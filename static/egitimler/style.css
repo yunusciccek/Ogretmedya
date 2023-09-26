@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/*******************/
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.arkaplan {
+    background-color: #25373D;
+}
+
+.kapsayici {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.ust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+}
+
+.ust .logo {
+    text-align: center;
+    color: #fff;
+
+}
+
+.ust .logo h1 {
+    font-size: 4rem;
+    letter-spacing: .5rem;
+    color:rgb(75, 73, 187)
+}
+
+.ust .logo h1 span {
+    color: #4CAF50;
+}
+
+.ust .logo h1:hover span {
+    background-color: #4CAF50;
+    color: #25373D;
+}
+
+.ust .logo h2 {
+    font-size: 2.4rem;
+}
+
+.ust .menu ul {
+    display: flex;
+}
+
+.ust .menu ul li {
+    margin: 0 1rem;
+}
+
+.ust .menu ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 0 2rem;
+}
+
+.ust .menu ul a:hover {
+    color: #FCB941;
+}
+
+
+.egitimler-listesi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Kutuları sola yaslama */
+    gap: 20px; /* Kutular arası boşluk */
+}
+
+.egitim-kutusu {
+    flex-basis: calc(33.33% - 20px); /* 3 kutu yan yana sığsın, kenar boşlukları çıkartıyoruz */
+    background-color: #989e76;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border: 6px solid #ccc;
+    border-radius: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.egitim-resim {
+    flex-basis: 50%; /* Sol yarıda resim */
+    text-align: center;
+    margin-right: 15px;
+}
+
+.egitim-resim img {
+    height: 175px !important;
+    max-width: 100%;
+    border: 6px solid #ccc;
+    border-radius: 100px;
+    
+}
+
+.egitim-bilgileri {
+    flex-basis: 50%; /* Sağ yarıda bilgiler */
+    text-align: left; /* Bilgileri sola hizala */
+}
+
+.egitim-kutusu h2 {
+    font-size: 2.4rem;
+    color:rgb(75, 73, 187);
+    margin-bottom: 10px;
+}
+
+.egitim-kutusu p {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+}

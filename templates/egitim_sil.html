@@ -1,0 +1,18 @@
+<!-- egitim_sil.html -->
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'egitim_sil/style.css' %}">
+<div class="egitim-sil-container">
+    <h2>Eğitimi Sil</h2>
+    <p>Eğitimi silmek istediğinizden emin misiniz?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eğitimi Sil</button>
+    </form>
+    <div>
+        <a href="{% url 'egitim_detay' egitim.slug %}" class="geri-don-link"><i class="fa fa-arrow-left"></i> Eğitime Geri Dön</a>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/*******************/
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.arkaplan {
+    background-color: #25373D;
+}
+
+.kapsayici {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.ust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+}
+
+.ust .logo {
+    text-align: center;
+    color: #fff;
+
+}
+
+.ust .logo h1 {
+    font-size: 4rem;
+    letter-spacing: .5rem;
+    color:rgb(75, 73, 187)
+}
+
+.ust .logo h1 span {
+    color: #4CAF50;
+}
+
+.ust .logo h1:hover span {
+    background-color: #4CAF50;
+    color: #25373D;
+}
+
+.ust .logo h2 {
+    font-size: 2.4rem;
+}
+
+.ust .menu ul {
+    display: flex;
+}
+
+.ust .menu ul li {
+    margin: 0 1rem;
+}
+
+.ust .menu ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 0 2rem;
+}
+
+.ust .menu ul a:hover {
+    color: #FCB941;
+}
+
+.egitim-detay {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between; /* İçerikleri yatayda hizala */
+}
+
+.egitim-icerik {
+    flex: 1; /* Alanı eşit olarak paylaşmak için */
+    padding: 20px; /* İçerik ile arasında boşluk bırakmak için */
+}
+
+.egitim-icerik h2 {
+    font-size: 78px;
+    margin-bottom: 20px; /* Başlık altındaki boşluğu artırır */
+    margin-left: 10px;
+}
+
+.egitim-icerik p {
+    font-size: 48px;
+    margin: 10px 0;
+    margin-left: 10px; /* Soldan boşluk ekler */
+}
+
+/* Eğitim Resim stilleri */
+.egitim-resim {
+    flex: 1; /* Alanı eşit olarak paylaşmak için */
+    padding: 20px; /* İçerik ile arasında boşluk bırakmak için */
+    text-align: center; /* Resmi merkezlemek için */
+}
+
+.egitim-resim img {
+    margin-top: 30px;
+    width: auto; /* Resmin genişliği ebeveyn boyutuna göre ayarlanır */
+    height:450px; /* Yüksekliği otomatik olarak ayarlanır */
+}

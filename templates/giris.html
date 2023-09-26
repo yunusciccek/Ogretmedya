@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'giris/style.css' %}">
+
+<div class="arkaplan alt-kenar-10">
+    <div class="ust kapsayici">
+        <div class="logo">
+            <h1><span>Öğret</span>medya</h1>
+            <h2>www.ogretmedya.com</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'anasayfa'%}">Ana Sayfa</a></li>
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'giris' %}">Giriş</a></li>
+                    <li><a href="{% url 'register' %}">Kayıt</a></li>
+                {% endif %}
+                <li><a href="{% url 'egitimler'%}">Eğitimler</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'egitim_ekle' %}">Eğitim Ekle</a></li>
+                <li><a href="{% url 'hesap' %}">Hesap</a></li>
+                <li><a href="{% url 'cikis' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+<div class ="Yazi">
+    <ul>
+        <li><h1>GİRİŞ YAP</h1></li>
+    </ul>
+</div>
+
+<form method="post" action="{% url 'giris' %}">
+    {% csrf_token %}
+    <div class="input-box">
+        <span><i class="fa fa-user-o"></i></span>
+        <label for="username">Kullanıcı Adı:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div class="input-box">
+        <span><i class="fa fa-key"></i></span>
+        <br>
+        <label for="password">Şifre:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+    </div>
+    <br>
+    <br>
+    <button type="submit"><i class="fa fa-sign-in"></i>Giriş Yap</button>
+</form>
+{% endblock %}

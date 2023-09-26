@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'register/style.css' %}">
+
+<div class="arkaplan alt-kenar-10">
+    <div class="ust kapsayici">
+        <div class="logo">
+            <h1><span>Öğret</span>medya</h1>
+            <h2>www.ogretmedya.com</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'anasayfa'%}">Ana Sayfa</a></li>
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'giris' %}">Giriş</a></li>
+                    <li><a href="{% url 'register' %}">Kayıt</a></li>
+                {% endif %}
+                <li><a href="{% url 'egitimler'%}">Eğitimler</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'egitim_ekle' %}">Eğitim Ekle</a></li>
+                <li><a href="{% url 'hesap' %}">Hesap</a></li>
+                <li><a href="{% url 'cikis' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="Yazi">
+    <ul>
+        <li><h1>KAYIT OL</h1></li>
+    </ul>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{% static 'register/style.css' %}">
+
+<form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="input-box">
+        <span><i class="fa fa-user-o"></i></span>
+        <input type="text" name="username" placeholder="Kullanıcı Adı" required>
+        {% if form.username.errors %}
+            <div class="error">{{ form.username.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="input-box">
+        <span><i class="fa fa-user-o"></i></span>
+        <input type="text" name="first_name" placeholder="Ad" required>
+        {% if form.first_name.errors %}
+            <div class="error">{{ form.first_name.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="input-box">
+        <span><i class="fa fa-user-o"></i></span>
+        <input type="text" name="last_name" placeholder="Soyad" required>
+        {% if form.last_name.errors %}
+            <div class="error">{{ form.last_name.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="input-box">
+        <span><i class="fa fa-envelope-o"></i></span>
+        <input type="email" name="email" placeholder="E-Posta Adresi" required>
+        {% if form.email.errors %}
+            <div class="error">{{ form.email.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="input-box">
+        <span><i class="fa fa-key"></i></span>
+        <input type="password" id="password1" name="password1" placeholder="Şifre" required>
+        {% if form.password1.errors %}
+            <div class="error">{{ form.password1.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="input-box">
+        <span><i class="fa fa-key"></i></span>
+        <input type="password" id="password2" name="password2" placeholder="Şifre (Tekrar)" required>
+        {% if form.password2.errors %}
+            <div class="error">{{ form.password2.errors }}</div>
+        {% endif %}
+    </div>
+    {% if not form.profile_picture.value %}
+    {% with default_profile_picture='path_to_default_profile_picture.png' %}
+        <div class="input-box">
+            <label for="profile_picture"><i class="fa fa-camera"></i> Profil Fotoğrafı Ekle</label>
+            <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+        </div>
+        <img src="{{ MEDIA_URL }}profile_pictures/{{ default_profile_picture }}" alt="Default Profile Picture">
+    {% endwith %}
+{% endif %}
+    
+    <br>
+    <br>
+    <button type="submit"><i class="fa fa-sign-in"></i>Kayıt Ol</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'path_to_password_strength_plugin.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        $("#password1").passwordStrength();
+        $("#password2").passwordStrength();
+    });
+</script>
+{% endblock %}

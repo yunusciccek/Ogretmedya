@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'anasayfa/style.css' %}">
+
+<div class="arkaplan alt-kenar-10">
+    <div class="ust kapsayici">
+        <div class="logo">
+            <h1><span>Öğret</span>medya</h1>
+            <h2>www.ogretmedya.com</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'anasayfa'%}">Ana Sayfa</a></li>
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'giris' %}">Giriş</a></li>
+                    <li><a href="{% url 'register' %}">Kayıt</a></li>
+                {% endif %}
+                <li><a href="{% url 'egitimler'%}">Eğitimler</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'egitim_ekle' %}">Eğitim Ekle</a></li>
+                <li><a href="{% url 'hesap' %}">Hesap</a></li>
+                <li><a href="{% url 'cikis' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
