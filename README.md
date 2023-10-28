@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 OgretMedya
 Django kullanarak yaptığım Ogretmedya adlı eğitim sitesi
 =======
@@ -13,4 +12,4 @@ Bu proje, Django kullanılarak geliştirilen bir online eğitim uygulamasını i
 - Kurs İncelemeleri: Kullanıcılar kursları inceleyebilir ve puan verebilirler.
 - Kurs İçeriği: Her kurs, metin, video veya diğer materyaller içerebilir.
 - Kullanıcı Profil: Kullanıcılar kendi profillerini düzenleyebilirler.
->>>>>>> 92652f8d34a6600a399d740fae6ab69a313e2bb2
+
