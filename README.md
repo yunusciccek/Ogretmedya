@@ -1,4 +1,4 @@
-OgretMedya
+          OgretMedya
 Django kullanarak yaptığım Ogretmedya adlı eğitim sitesi
 =======
 # Online Eğitim Uygulaması
