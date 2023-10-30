@@ -1,5 +1,5 @@
-          OgretMedya
-Django kullanarak yaptığım Ogretmedya adlı eğitim sitesi
+#     OgretMedya
+# Django kullanarak yaptığım Ogretmedya adlı eğitim sitesi
 
 WEB APP LİNKİ:http://yunusccicek.pythonanywhere.com/
 
